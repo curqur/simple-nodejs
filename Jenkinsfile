@@ -11,10 +11,10 @@ pipeline {
         }
         stage('Test') {
             steps {
-                sh 'npm start &'
-                sh 'sleep 1'
-                sh 'echo $! > .pidfile'
-                sh 'kill $(cat .pidfile)'
+                sh "npm start &"
+                sh "sleep 1"
+                sh "echo $! > .pidfile"
+                sh "kill $(cat .pidfile)"
             }
         }
     }
