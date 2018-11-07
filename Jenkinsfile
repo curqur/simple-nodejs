@@ -20,6 +20,8 @@ pipeline {
             }
             steps {
                 sh './scripts/deploy-dev.sh'
+                input message: 'Finished using the web site? (Click "Proceed" to continue)'
+                sh './scripts/kill.sh'
             }
         }
         stage('Deploy for Production') {
@@ -28,8 +30,6 @@ pipeline {
             }
             steps {
                 sh './scripts/deploy-prod.sh'
-                input message: 'Finished using the web site? (Click "Proceed" to continue)'
-                sh './scripts/kill.sh'
             }
         }
     }
