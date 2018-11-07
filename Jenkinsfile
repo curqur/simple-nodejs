@@ -13,8 +13,8 @@ pipeline {
             steps {
                 sh "npm start &"
                 sh "sleep 1"
-                sh "echo $! > .pidfile"
-                sh "kill $(cat .pidfile)"
+                sh "echo \$! > .pidfile"
+                sh "kill \$(cat .pidfile)"
             }
         }
     }
