@@ -13,4 +13,6 @@ var server = http.createServer(function(req, res) {
     }
     res.end();
 });
-server.listen(8081);
+
+const PORT = process.env.PORT || 5000;
+server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
